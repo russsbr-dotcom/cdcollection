@@ -12,7 +12,7 @@
       "region": "U.S.",
       "dateAcquisition": "20/11/2025",
       "price": 15.55,
-      "rating": 5.5
+      "rating": 5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Alice_in_Chains_Greatest_Hits.jpg/250px-Alice_in_Chains_Greatest_Hits.jpg",
@@ -54,7 +54,7 @@
       "region": "Poland",
       "dateAcquisition": "22/02/2026",
       "price": 29,
-      "rating": 0
+      "rating": 5.5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6f/Czarface_and_MF_DOOM_-_Super_What_album_cover.jpg",
@@ -180,7 +180,7 @@
       "region": "Europe",
       "dateAcquisition": "22/02/2026",
       "price": 14,
-      "rating": 0
+      "rating": 6
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71dDY-Ewn7L.jpg",
@@ -194,7 +194,7 @@
       "region": "Mexico",
       "dateAcquisition": "22/02/2026",
       "price": 18,
-      "rating": 0
+      "rating": 5
     },
     {
       "imageUrl": "https://i.discogs.com/oUzPWPb3B2MgsrcDen811IdTLNqf4m9ZMTOOtG9nJ0E/rs:fit/g:sm/q:90/h:540/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNDUx/NjkwLTE3MjMzODAx/ODMtMTg2OS5wbmc.jpeg",
@@ -208,7 +208,7 @@
       "region": "U.S.",
       "dateAcquisition": "22/02/2026",
       "price": 13,
-      "rating": 0
+      "rating": 5.5
     },
     {
       "imageUrl": "https://www.stonesthrow.com/app/uploads/2018/07/Madvillainy-1080.jpg",
@@ -348,7 +348,7 @@
       "region": "Mexico",
       "dateAcquisition": "22/02/2026",
       "price": 25,
-      "rating": 0
+      "rating": 5.5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a2/GreatestHitsBIG.jpg",
@@ -376,7 +376,7 @@
       "region": "Poland",
       "dateAcquisition": "22/02/2026",
       "price": 18,
-      "rating": 6
+      "rating": 5
     },
     {
       "imageUrl": "https://i.scdn.co/image/ab67616d0000b273e79452d0690a42007921f10a",
@@ -474,7 +474,7 @@
       "region": "U.S.",
       "dateAcquisition": "22/02/2026",
       "price": 17,
-      "rating": 0
+      "rating": 5
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/614UiJzoxPL._UF894,1000_QL80_.jpg",
