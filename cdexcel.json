@@ -53,8 +53,8 @@
       "year": "Ltd Ed. Reissue (2025)",
       "region": "Poland",
       "dateAcquisition": "22/02/2026",
-      "price": "",
-      "rating": ""
+      "price": 29,
+      "rating": 0
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6f/Czarface_and_MF_DOOM_-_Super_What_album_cover.jpg",
@@ -68,7 +68,7 @@
       "region": "U.S.",
       "dateAcquisition": "13/02/2026",
       "price": 20.9,
-      "rating": "3.5"
+      "rating": 3.5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Encore_%28Eminem_album%29_coverart.jpg/250px-Encore_%28Eminem_album%29_coverart.jpg",
@@ -179,8 +179,8 @@
       "year": "Reissue (2020)",
       "region": "Europe",
       "dateAcquisition": "22/02/2026",
-      "price": ,
-      "rating": 
+      "price": 14,
+      "rating": 0
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71dDY-Ewn7L.jpg",
@@ -193,8 +193,8 @@
       "year": "Reissue (ca. 2020)",
       "region": "Mexico",
       "dateAcquisition": "22/02/2026",
-      "price": "",
-      "rating": ""
+      "price": 18,
+      "rating": 0
     },
     {
       "imageUrl": "https://i.discogs.com/oUzPWPb3B2MgsrcDen811IdTLNqf4m9ZMTOOtG9nJ0E/rs:fit/g:sm/q:90/h:540/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNDUx/NjkwLTE3MjMzODAx/ODMtMTg2OS5wbmc.jpeg",
@@ -207,8 +207,8 @@
       "year": "Reissue (2021)",
       "region": "U.S.",
       "dateAcquisition": "22/02/2026",
-      "price": ,
-      "rating": 
+      "price": 13,
+      "rating": 0
     },
     {
       "imageUrl": "https://www.stonesthrow.com/app/uploads/2018/07/Madvillainy-1080.jpg",
@@ -249,7 +249,7 @@
       "year": "2010",
       "region": "Germany",
       "dateAcquisition": "13/02/2026",
-      "price": "16",
+      "price": 16,
       "rating": 6
     },
     {
@@ -347,8 +347,8 @@
       "year": "Reissue (2023)",
       "region": "Mexico",
       "dateAcquisition": "22/02/2026",
-      "price": "",
-      "rating": ""
+      "price": 25,
+      "rating": 0
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a2/GreatestHitsBIG.jpg",
@@ -375,7 +375,7 @@
       "year": "Ltd Ed. Reissue (2023)",
       "region": "Poland",
       "dateAcquisition": "22/02/2026",
-      "price": ,
+      "price": 18,
       "rating": 6
     },
     {
@@ -473,8 +473,8 @@
       "year": "Reissue (2023)",
       "region": "U.S.",
       "dateAcquisition": "22/02/2026",
-      "price": "",
-      "rating": ""
+      "price": 17,
+      "rating": 0
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/614UiJzoxPL._UF894,1000_QL80_.jpg",
