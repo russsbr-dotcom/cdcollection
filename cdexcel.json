@@ -43,6 +43,20 @@
       "rating": 4
     },
     {
+      "imageUrl": "https://i.discogs.com/LjYYnXueD-oLrQLT6g1QVlPoWTn3b53vyaqnOo59KPU/rs:fit/g:sm/q:90/h:600/w:589/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0MTQ0/MTIzLTE3NDg3NzA2/OTYtOTMzNy5qcGVn.jpeg",
+      "albumTitle": "Meanwhile... (Remaster 2025), 1997",
+      "artistName": "Casual",
+      "label": "Trumindz Records",
+      "catalogNumber": "TRUMINDZ004CD",
+      "matrix": "2100012242950 www.miwa.com.pl/0401",
+      "sids": "IFPI LK97 IFPI AEW11",
+      "year": "Ltd Ed. Reissue (2025)",
+      "region": "Poland",
+      "dateAcquisition": 22/02/2026",
+      "price": ,
+      "rating": ""
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6f/Czarface_and_MF_DOOM_-_Super_What_album_cover.jpg",
       "albumTitle": "Super What?, 2021",
       "artistName": "Czarface & MF DOOM",
@@ -153,6 +167,48 @@
       "dateAcquisition": "13/02/2026",
       "price": 12,
       "rating": 5.5
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d2/King_Geedorah_-_Take_Me_to_Your_Leader_album_cover.jpg",
+      "albumTitle": "Take Me To Your Leader, 2003",
+      "artistName": "King Geedorah",
+      "label": "Big Dada Recordings",
+      "catalogNumber": "BDCD051",
+      "matrix": "0001504767 010324 1209 CA BDCD051 @@",
+      "sids": "IFPI LV88",
+      "year": "Reissue (2020)",
+      "region": "Europe",
+      "dateAcquisition": "22/02/2026",
+      "price": ,
+      "rating": 
+    },
+    {
+      "imageUrl": "https://m.media-amazon.com/images/I/71dDY-Ewn7L.jpg",
+      "albumTitle": "4,5,6, 1995",
+      "artistName": "Kool G Rap",
+      "label": "Cold Chillin', Epic Street",
+      "catalogNumber": "EK 57808",
+      "matrix": "56954154/1EK57808RD1 21",
+      "sids": "IFPI LP73 IFPI 073Z",
+      "year": "Reissue (ca. 2020)",
+      "region": "Mexico",
+      "dateAcquisition": "22/02/2026",
+      "price": ,
+      "rating": 
+    },
+    {
+      "imageUrl": "https://i.discogs.com/oUzPWPb3B2MgsrcDen811IdTLNqf4m9ZMTOOtG9nJ0E/rs:fit/g:sm/q:90/h:540/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNDUx/NjkwLTE3MjMzODAx/ODMtMTg2OS5wbmc.jpeg",
+      "albumTitle": "The Awakening (25th Anniversary) (2x CD), 1996",
+      "artistName": "Lord Finesse",
+      "label": "Tommy Boy",
+      "catalogNumber": "TB-5170-2",
+      "matrix": "(1152778) J6.4.TB51702.SA.1 02 0001",
+      "sids": "IFPI LV77 IFPI KKTY",
+      "year": "Reissue (2021)",
+      "region": "U.S.",
+      "dateAcquisition": "22/02/2026",
+      "price": ,
+      "rating": 
     },
     {
       "imageUrl": "https://www.stonesthrow.com/app/uploads/2018/07/Madvillainy-1080.jpg",
@@ -281,6 +337,20 @@
       "rating": 5
     },
     {
+      "imageUrl": "https://i.discogs.com/MpEyRE3lEAGN1dx4ArmUbCCk92CNgdkY0KFh7HVplgw/rs:fit/g:sm/q:90/h:540/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwMDgy/Nzk3LTE3MTAzMDk5/MTEtNDAxMy5qcGVn.jpeg",
+      "albumTitle": "19NaughtyIII (30th Anniversary) (2x CD), 1993",
+      "artistName": "Naughty By Nature",
+      "label": "Tommy Boy",
+      "catalogNumber": "TB-5272-2",
+      "matrix": "(1210658) TB52722D1R0 01 0001",
+      "sids": "IFPI LW86 IFPI KKTV",
+      "year": "Reissue (2023)",
+      "region": "Mexico",
+      "dateAcquisition": "22/02/2026",
+      "price": ,
+      "rating": 
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a2/GreatestHitsBIG.jpg",
       "albumTitle": "Greatest Hits, 2007",
       "artistName": "The Notorious B.I.G.",
@@ -295,6 +365,20 @@
       "rating": 5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fd/Jewelz_%28O.C._album_-_cover_art%29.jpg",
+      "albumTitle": "Jewelz, 1997",
+      "artistName": "O.C.",
+      "label": "90's Tapes",
+      "catalogNumber": "90STAPES58.3",
+      "matrix": "CA 90STAPES58.3 MATCD000001005 @ 11/09/22 06:43:35",
+      "sids": "IFPI L039",
+      "year": "Ltd Ed. Reissue (2023)",
+      "region": "Poland",
+      "dateAcquisition": "22/02/2026",
+      "price": ,
+      "rating": 6
+    },
+    {
       "imageUrl": "https://i.scdn.co/image/ab67616d0000b273e79452d0690a42007921f10a",
       "albumTitle": "Word...Life, 1994",
       "artistName": "O.C.",
@@ -302,7 +386,7 @@
       "catalogNumber": "90STAPES57.3",
       "matrix": "CA 90STAPES57.3 MATCD000000987 @ 11/08/22 02:32:45",
       "sids": "IFPI L039",
-      "year": "Ltd Ed. Reissue (2022)",
+      "year": "Ltd Ed. Reissue (2023)",
       "region": "Poland",
       "dateAcquisition": "16/02/2026",
       "price": 47,
@@ -351,6 +435,20 @@
       "rating": 4.5
     },
     {
+      "imageUrl": "https://i.discogs.com/W5rIcd3NYn3zrQpVJnCWU59icbXXX6t4GUwekd3uEBM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzNzA1/ODItMTc2ODczNTA4/NC02MDM3LnBuZw.jpeg",
+      "albumTitle": "Tags Of The Times, 1998",
+      "artistName": "Various",
+      "label": "Mary Joy Recordings",
+      "catalogNumber": "MKCM1001",
+      "matrix": "<MKCM-1001>GHC26E SA",
+      "sids": "IFPI L461 IFPI 7833",
+      "year": "Repress (ca. 2005)",
+      "region": "Hong Kong",
+      "dateAcquisition": "14/01/2026",
+      "price": 44.29,
+      "rating": 4
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3e/The_Verve%2C_Urban_Hymns.png",
       "albumTitle": "Urban Hymns, 1997 (2016 Remaster)",
       "artistName": "The Verve",
@@ -365,18 +463,18 @@
       "rating": 3
     },
     {
-      "imageUrl": "https://i.discogs.com/W5rIcd3NYn3zrQpVJnCWU59icbXXX6t4GUwekd3uEBM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzNzA1/ODItMTc2ODczNTA4/NC02MDM3LnBuZw.jpeg",
-      "albumTitle": "Tags Of The Times, 1998",
-      "artistName": "Various",
-      "label": "Mary Joy Recordings",
-      "catalogNumber": "MKCM1001",
-      "matrix": "<MKCM-1001>GHC26E SA",
-      "sids": "IFPI L461 IFPI 7833",
-      "year": "Repress (ca. 2005)",
-      "region": "Hong Kong",
-      "dateAcquisition": "14/01/2026",
-      "price": 44.29,
-      "rating": 4
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/48/Vaudevillevillain.jpg",
+      "albumTitle": "Vaudeville Villain, 2003",
+      "artistName": "Viktor Vaughn",
+      "label": "Rhymesayers Entertainment",
+      "catalogNumber": "RSE0370-2",
+      "matrix": "RSE03702 6745-CD-5747 23-156-03-2",
+      "sids": "IFPI LV89 IFPI L914",
+      "year": "Reissue (2023)",
+      "region": "U.S.",
+      "dateAcquisition": "22/02/2026",
+      "price": ,
+      "rating": 
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/614UiJzoxPL._UF894,1000_QL80_.jpg",
