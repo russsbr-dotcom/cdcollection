@@ -147,7 +147,7 @@
       "label": "Chrysalis, Cooltempo",
       "catalogNumber": "7243 8 34820 2 3",
       "matrix": "8348202 2 EMI SWINDON 1-2-4-NL",
-      "sids": "IFPI L041 IFI 1511",
+      "sids": "IFPI L041 IFPI 1511",
       "year": "1995",
       "region": "U.K.",
       "dateAcquisition": "24/02/2026",
@@ -234,7 +234,7 @@
       "sids": "IFPI L047 IFPI 1594",
       "year": "2003",
       "region": "Netherlands",
-      "dateAcquisition": 24/02/2026",
+      "dateAcquisition": "24/02/2026",
       "price": 8.15,
       "rating": 6.5
     },
