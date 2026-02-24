@@ -141,6 +141,20 @@
       "rating": 5.5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/GuruJazzmatazz2.jpg",
+      "albumTitle": "Jazzmatazz (Vol, II.): The New Reality, 1995",
+      "artistName": "Guru",
+      "label": "Chrysalis, Cooltempo",
+      "catalogNumber": "7243 8 34820 2 3",
+      "matrix": "8348202 2 EMI SWINDON 1-2-4-NL",
+      "sids": "IFPI L041 IFI 1511",
+      "year": "1995",
+      "region": "U.K.",
+      "dateAcquisition": "24/02/2026",
+      "price": 7,90,
+      "rating": 5.5
+    },
+    {
       "imageUrl": "https://m.media-amazon.com/images/I/71LrHvC22-L.jpg",
       "albumTitle": "Liquid Swords, 1995",
       "artistName": "GZA",
@@ -209,6 +223,20 @@
       "dateAcquisition": "22/02/2026",
       "price": 13,
       "rating": 5.5
+    },
+    {
+      "imageUrl": "https://m.media-amazon.com/images/I/81+1hKnwnQL._UF894,1000_QL80_.jpg",
+      "albumTitle": "Shades Of Blue: Madlib Invades Blue Note, 2003",
+      "artistName": "Madlib",
+      "label": "Blue Note Records",
+      "catalogNumber": "7243 5 36447 2 7",
+      "matrix": "1-1-4 NL EMI uDEN 5364472 @ 1",
+      "sids": "IFPI L047 IFPI 1594",
+      "year": "2003",
+      "region": "Netherlands",
+      "dateAcquisition": 24/02/2026",
+      "price": 8,15,
+      "rating": 6.5
     },
     {
       "imageUrl": "https://www.stonesthrow.com/app/uploads/2018/07/Madvillainy-1080.jpg",
