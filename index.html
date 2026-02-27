@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>CD Collection</title>
-        <link rel="stylesheet" href="selfpage.css?cb=50" />
+        <link rel="stylesheet" href="index.css?cb=50" />
 </head>
 <body>
     <div class="top-actions" aria-label="External links">
         <!--<p><a href="https://www.discogs.com/user/bustasomerhymes/collection" style="color: #FFD400;">link</a></p>-->
 
-        <button id="ceelo-open-btn" class="top-action-btn" type="button" aria-label="Open Cee-lo game" title="Open Cee-lo game">
+        <button id="ceelo-open-btn" class="top-action-btn" type="button" aria-label="I'm feeling lucky">
             <img src="six.jpg" alt="Six">
         </button>
     </div>
@@ -25,10 +25,7 @@
                     <span class="release-header-controls">
                         Release
                         <button id="sort-artist-btn" class="sort-button">▼</button>
-                        <button id="release-search-toggle" class="search-toggle-button" aria-label="Search albums or artists" title="Search albums or artists"></button>
-                        <span id="release-search-panel" class="release-search-panel" aria-hidden="true">
-                            <input id="album-search-input" class="album-search-input" type="text" placeholder="Search albums or artists..." aria-label="Search albums or artists">
-                        </span>
+                        <input id="album-search-input" class="album-search-input" type="text" placeholder="Search albums or artists..." aria-label="Search albums or artists">
                     </span>
                 </span>
                 <span>Catalog</span>
@@ -150,9 +147,15 @@
         <source src="mrclean.mp3" type="audio/mpeg">
     </audio>
 
+    <audio id="bg-music" loop>
+        <source src="dontblink.mp3" type="audio/mpeg">
+    </audio>
+
     <audio id="dice-shake-sfx">
         <source src="diceshake.mp3" type="audio/mpeg">
     </audio>
+
+    <audio id="ceelo-four-five-six-sfx" preload="none"></audio>
 
     <script>
         // Rating Popup functionality
@@ -192,10 +195,39 @@
         const ceeloPlayerResult = document.getElementById('ceelo-player-result');
         const ceeloMessageLog = document.getElementById('ceelo-message-log');
         const ceeloBgMusic = document.getElementById('ceelo-bg-music');
+        const bgMusic = document.getElementById('bg-music');
         const diceShakeSfx = document.getElementById('dice-shake-sfx');
+        const ceeloFourFiveSixSfx = document.getElementById('ceelo-four-five-six-sfx');
+        const ceeloMusicTargetVolume = 0.008;
+
+        let bgMusicPausedForCeelo = false;
+        let ceeloMusicFadeIntervalId = null;
+        function playBgMusic() {
+            if (!bgMusic) return;
+            bgMusic.play().catch(() => {});
+        }
+
+        function startSiteMusicFlow() {
+            if (!bgMusic) return;
+            if (!ceeloPopup.classList.contains('show')) {
+                playBgMusic();
+            }
+        }
 
         if (ceeloBgMusic) {
-            ceeloBgMusic.volume = 0.15;
+            ceeloBgMusic.volume = ceeloMusicTargetVolume;
+        }
+
+        if (bgMusic) {
+            bgMusic.volume = 0.005;
+        }
+
+        if (diceShakeSfx) {
+            diceShakeSfx.volume = 0.035;
+        }
+
+        if (ceeloFourFiveSixSfx) {
+            ceeloFourFiveSixSfx.volume = 0.03;
         }
 
         const ceeloDiceFaceByNumber = {
@@ -312,6 +344,19 @@
             ceeloMessageLog.scrollTop = ceeloMessageLog.scrollHeight;
         }
 
+        function ceeloPlayFourFiveSixSfx() {
+            if (!ceeloFourFiveSixSfx) return;
+
+            if (!ceeloFourFiveSixSfx.dataset.loaded) {
+                ceeloFourFiveSixSfx.src = 'fofivesix.mp3';
+                ceeloFourFiveSixSfx.dataset.loaded = 'true';
+                ceeloFourFiveSixSfx.load();
+            }
+
+            ceeloFourFiveSixSfx.currentTime = 0;
+            ceeloFourFiveSixSfx.play().catch(() => {});
+        }
+
         function ceeloResetMessageLog() {
             if (!ceeloMessageLog) return;
             ceeloMessageLog.innerHTML = '';
@@ -334,17 +379,54 @@
             ceeloState.allInConfirmationPending = false;
             ceeloBankerResult.textContent = 'Waiting...';
             ceeloPlayerResult.textContent = 'Waiting...';
+            ceeloStartRoundBtn.disabled = true;
             if (ceeloRollBankerBtn) ceeloRollBankerBtn.disabled = true;
             ceeloRollPlayerBtn.disabled = true;
         }
 
+        function ceeloPlayMusicWithFadeIn() {
+            if (!ceeloBgMusic) return;
+
+            if (ceeloMusicFadeIntervalId) {
+                clearInterval(ceeloMusicFadeIntervalId);
+                ceeloMusicFadeIntervalId = null;
+            }
+
+            const fadeDurationMs = 800;
+            const stepMs = 40;
+            const totalSteps = Math.max(1, Math.floor(fadeDurationMs / stepMs));
+            let step = 0;
+
+            ceeloBgMusic.currentTime = 0;
+            ceeloBgMusic.volume = 0;
+
+            ceeloBgMusic.play().then(() => {
+                ceeloMusicFadeIntervalId = setInterval(() => {
+                    step += 1;
+                    ceeloBgMusic.volume = Math.min(ceeloMusicTargetVolume, (step / totalSteps) * ceeloMusicTargetVolume);
+
+                    if (step >= totalSteps) {
+                        clearInterval(ceeloMusicFadeIntervalId);
+                        ceeloMusicFadeIntervalId = null;
+                        ceeloBgMusic.volume = ceeloMusicTargetVolume;
+                    }
+                }, stepMs);
+            }).catch(() => {
+                ceeloBgMusic.volume = ceeloMusicTargetVolume;
+            });
+        }
+
         function ceeloOpenPopup() {
+            if (bgMusic && !bgMusic.paused) {
+                bgMusic.pause();
+                bgMusicPausedForCeelo = true;
+            } else {
+                bgMusicPausedForCeelo = false;
+            }
+
             ceeloPopup.classList.add('show');
             ceeloPopup.setAttribute('aria-hidden', 'false');
-            if (ceeloBgMusic) {
-                ceeloBgMusic.currentTime = 0;
-                ceeloBgMusic.play().catch(() => {});
-            }
+            ceeloPlayMusicWithFadeIn();
             if (ceeloMessageLog && !ceeloMessageLog.querySelector('.ceelo-message-item')) {
                 ceeloResetMessageLog();
             }
@@ -355,9 +437,19 @@
             ceeloPopup.classList.remove('show');
             ceeloPopup.setAttribute('aria-hidden', 'true');
             if (ceeloBgMusic) {
+                if (ceeloMusicFadeIntervalId) {
+                    clearInterval(ceeloMusicFadeIntervalId);
+                    ceeloMusicFadeIntervalId = null;
+                }
                 ceeloBgMusic.pause();
                 ceeloBgMusic.currentTime = 0;
+                ceeloBgMusic.volume = ceeloMusicTargetVolume;
             }
+
+            if (bgMusicPausedForCeelo && bgMusic) {
+                playBgMusic();
+            }
+            bgMusicPausedForCeelo = false;
         }
 
         async function ceeloAnimateSingleRoll(diceRowEl, sideLabel) {
@@ -383,10 +475,18 @@
             let rollOutcome = await ceeloAnimateSingleRoll(diceRowEl, sideLabel);
             resultEl.textContent = rollOutcome.result.text;
 
+            if (rollOutcome.result.kind === 'auto-win') {
+                ceeloPlayFourFiveSixSfx();
+            }
+
             while (autoRerollOnBust && rollOutcome.result.kind === 'bust') {
                 await ceeloSleep(1000);
                 rollOutcome = await ceeloAnimateSingleRoll(diceRowEl, sideLabel);
                 resultEl.textContent = rollOutcome.result.text;
+
+                if (rollOutcome.result.kind === 'auto-win') {
+                    ceeloPlayFourFiveSixSfx();
+                }
             }
 
             return rollOutcome.result;
@@ -413,6 +513,7 @@
             ceeloUpdateBalanceText();
             ceeloState.phase = 'round-over';
             ceeloState.hasCompletedRound = true;
+            ceeloStartRoundBtn.disabled = false;
             ceeloRollPlayerBtn.disabled = true;
         }
 
@@ -445,6 +546,8 @@
         }
 
         async function ceeloPlaceBet() {
+            if (ceeloStartRoundBtn.disabled) return;
+
             const betValue = parseInt(ceeloBetInput.value, 10);
             const normalizedBet = ceeloNormalizeBetInput(betValue);
 
@@ -513,6 +616,12 @@
         if (ceeloOpenBtn && ceeloPopup && ceeloCloseBtn) {
             ceeloOpenBtn.addEventListener('click', ceeloOpenPopup);
             ceeloCloseBtn.addEventListener('click', ceeloClosePopup);
+
+            if (bgMusic) {
+                startSiteMusicFlow();
+                document.addEventListener('pointerdown', startSiteMusicFlow, { once: true });
+                document.addEventListener('keydown', startSiteMusicFlow, { once: true });
+            }
 
             window.addEventListener('click', function(e) {
                 if (e.target === ceeloPopup) {
@@ -888,34 +997,31 @@
                 document.getElementById('sort-price-btn').addEventListener('click', sortByPrice);
                 document.getElementById('sort-rating-btn').addEventListener('click', sortByRating);
 
-                const searchToggle = document.getElementById('release-search-toggle');
-                const searchPanel = document.getElementById('release-search-panel');
                 const searchInput = document.getElementById('album-search-input');
 
-                if (searchToggle && searchPanel && searchInput) {
-                    searchToggle.addEventListener('click', function() {
-                        const isOpen = searchPanel.classList.toggle('open');
-                        searchPanel.setAttribute('aria-hidden', (!isOpen).toString());
-                        searchToggle.classList.toggle('active', isOpen);
+                if (searchInput) {
+                    searchInput.addEventListener('focus', function() {
+                        searchInput.classList.add('open');
+                    });
 
-                        if (isOpen) {
-                            searchInput.focus();
-                        } else {
-                            searchInput.value = '';
-                            applyAlbumSearch();
-                        }
+                    searchInput.addEventListener('click', function() {
+                        searchInput.classList.add('open');
                     });
 
                     searchInput.addEventListener('input', applyAlbumSearch);
 
                     searchInput.addEventListener('keydown', function(event) {
                         if (event.key === 'Escape') {
-                            searchPanel.classList.remove('open');
-                            searchPanel.setAttribute('aria-hidden', 'true');
-                            searchToggle.classList.remove('active');
                             searchInput.value = '';
+                            searchInput.classList.remove('open');
                             applyAlbumSearch();
-                            searchToggle.focus();
+                            searchInput.blur();
+                        }
+                    });
+
+                    searchInput.addEventListener('blur', function() {
+                        if (!searchInput.value.trim()) {
+                            searchInput.classList.remove('open');
                         }
                     });
                 }
