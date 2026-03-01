@@ -183,6 +183,20 @@
       "rating": 5.5
     },
     {
+      "imageUrl": "https://m.media-amazon.com/images/I/516qybuOZhL._UF894,1000_QL80_.jpg",
+      "albumTitle": "Yeezus, 2013",
+      "artistName": "Kanye West",
+      "label": "Def Jam Recordings",
+      "catalogNumber": "602537432134 LC08427",
+      "matrix": "3743213- 25 A00",
+      "sids": "IFPI L557 IFPI 946Q",
+      "year": "2013",
+      "region": "EU",
+      "dateAcquisition": "28/02/2026",
+      "price": 15.9,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d2/King_Geedorah_-_Take_Me_to_Your_Leader_album_cover.jpg",
       "albumTitle": "Take Me To Your Leader, 2003",
       "artistName": "King Geedorah",
@@ -251,6 +265,20 @@
       "dateAcquisition": "17/01/2025",
       "price": 26,
       "rating": 6.5
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/74/100th_Window.jpg",
+      "albumTitle": "100th Window, 2003",
+      "artistName": "Massive Attack",
+      "label": "Virgin Records",
+      "catalogNumber": "724358123920 CDV2967",
+      "matrix": "5812392 13 A00",
+      "sids": "IFPI L553 IFPI 94K1",
+      "year": "Reissue (ca. 2010)",
+      "region": "EU",
+      "dateAcquisition": "28/02/2026",
+      "price": 7.9,
+      "rating": 0
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a7/MassiveAttackBlueLines.jpg",
