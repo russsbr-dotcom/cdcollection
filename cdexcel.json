@@ -194,7 +194,7 @@
       "region": "EU",
       "dateAcquisition": "28/02/2026",
       "price": 15.9,
-      "rating": 0
+      "rating": 4.5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d2/King_Geedorah_-_Take_Me_to_Your_Leader_album_cover.jpg",
@@ -278,7 +278,7 @@
       "region": "EU",
       "dateAcquisition": "28/02/2026",
       "price": 7.9,
-      "rating": 0
+      "rating": 4
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a7/MassiveAttackBlueLines.jpg",
@@ -376,7 +376,7 @@
       "region": "U.S.",
       "dateAcquisition": "18/12/2025",
       "price": 14.74,
-      "rating": 3
+      "rating": 4.5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/27/IllmaticNas.jpg",
