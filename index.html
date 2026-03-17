@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CD Collection</title>
-        <link rel="stylesheet" href="index.css?cb=50" />
+        <link rel="stylesheet" href="index.css?cb=55" />
 </head>
 <body>
     <div class="top-actions" aria-label="External links">
@@ -30,8 +30,8 @@
                 </span>
                 <span>Catalog</span>
                 <span id="identification-header">Identification <button id="sort-year-btn" class="sort-button">▼</button></span>
-                <span id="acquisition-header">Acquisition Details <button id="sort-date-btn" class="sort-button">▼</button><button id="sort-price-btn" class="sort-button" aria-label="Sort by price"></button></span>
-                <span id="rating-header" style="cursor: pointer;" title="Click to see rating meanings">Personal Rating <button id="sort-rating-btn" class="sort-button">▼</button></span>
+                <span id="acquisition-header">Acquisition Details <button id="sort-date-btn" class="sort-button">▼</button><button id="sort-price-btn" class="sort-button" aria-label="Sort by price"></button><span class="header-footnote">*1</span></span>
+                <span id="rating-header">Personal Rating<span class="header-footnote">*2</span> <button id="sort-rating-btn" class="sort-button">▼</button></span>
             </h2>
         </div>
 
@@ -51,43 +51,41 @@
         </div>
     </div>
 
-    <!-- Rating Info Popup -->
-    <div id="ratingPopup" class="rating-popup">
-        <div class="rating-popup-content">
-            <span class="rating-close">&times;</span>
-            <h3>Personal Rating Scale</h3>
-            <div class="rating-scale">
-                <div class="rating-item">
-                    <span class="rating-number">7</span>
-                    <span class="rating-label">Favourite</span>
+    <div class="table-footnotes">
+        <div class="footnotes-header">
+            <p class="table-footnote-line">*1 - Includes shipping and VAT costs.</p>
+            <p class="table-last-updated">Last updated: <span id="last-updated-timestamp">Loading...</span></p>
+        </div>
+        <div class="footnotes-content">
+            <p class="table-footnote-line">*2 - Rating Scale:</p>
+            <div class="rating-legend-scale" aria-label="Rating scale from 1 to 7">
+                <div class="rating-legend-item">
+                    <div class="rating-legend-star">1</div>
+                    <div class="rating-legend-label">Bad</div>
                 </div>
-                <div class="rating-item">
-                    <span class="rating-number">6</span>
-                    <span class="rating-label">Amazing</span>
+                <div class="rating-legend-item">
+                    <div class="rating-legend-star">2</div>
+                    <div class="rating-legend-label">Subpar</div>
                 </div>
-                <div class="rating-item">
-                    <span class="rating-number">5</span>
-                    <span class="rating-label">Very Good</span>
+                <div class="rating-legend-item">
+                    <div class="rating-legend-star">3</div>
+                    <div class="rating-legend-label">Decent</div>
                 </div>
-                <div class="rating-item">
-                    <span class="rating-number">4</span>
-                    <span class="rating-label">Good</span>
+                <div class="rating-legend-item">
+                    <div class="rating-legend-star">4</div>
+                    <div class="rating-legend-label">Good</div>
                 </div>
-                <div class="rating-item">
-                    <span class="rating-number">3</span>
-                    <span class="rating-label">Decent</span>
+                <div class="rating-legend-item">
+                    <div class="rating-legend-star">5</div>
+                    <div class="rating-legend-label">Very Good</div>
                 </div>
-                <div class="rating-item">
-                    <span class="rating-number">2</span>
-                    <span class="rating-label">Subpar</span>
+                <div class="rating-legend-item">
+                    <div class="rating-legend-star">6</div>
+                    <div class="rating-legend-label">Amazing</div>
                 </div>
-                <div class="rating-item">
-                    <span class="rating-number">1</span>
-                    <span class="rating-label">Bad</span>
-                </div>
-                <div class="rating-item">
-                    <span class="rating-number">0</span>
-                    <span class="rating-label">Awful</span>
+                <div class="rating-legend-item">
+                    <div class="rating-legend-star">7</div>
+                    <div class="rating-legend-label">Favourite</div>
                 </div>
             </div>
         </div>
@@ -147,10 +145,6 @@
         <source src="mrclean.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="bg-music" loop>
-        <source src="dontblink.mp3" type="audio/mpeg">
-    </audio>
-
     <audio id="dice-shake-sfx">
         <source src="diceshake.mp3" type="audio/mpeg">
     </audio>
@@ -158,29 +152,6 @@
     <audio id="ceelo-four-five-six-sfx" preload="none"></audio>
 
     <script>
-        // Rating Popup functionality
-        const ratingHeader = document.getElementById('rating-header');
-        const ratingPopup = document.getElementById('ratingPopup');
-        const ratingClose = document.querySelector('.rating-close');
-
-        ratingHeader.addEventListener('click', function(e) {
-            // Don't trigger if clicking the sort button
-            if (e.target.id === 'sort-rating-btn' || e.target.closest('button')) {
-                return;
-            }
-            ratingPopup.classList.add('show');
-        });
-
-        ratingClose.addEventListener('click', function() {
-            ratingPopup.classList.remove('show');
-        });
-
-        window.addEventListener('click', function(e) {
-            if (e.target === ratingPopup) {
-                ratingPopup.classList.remove('show');
-            }
-        });
-
         const ceeloOpenBtn = document.getElementById('ceelo-open-btn');
         const ceeloPopup = document.getElementById('ceeloPopup');
         const ceeloCloseBtn = document.getElementById('ceelo-close-btn');
@@ -195,31 +166,105 @@
         const ceeloPlayerResult = document.getElementById('ceelo-player-result');
         const ceeloMessageLog = document.getElementById('ceelo-message-log');
         const ceeloBgMusic = document.getElementById('ceelo-bg-music');
-        const bgMusic = document.getElementById('bg-music');
         const diceShakeSfx = document.getElementById('dice-shake-sfx');
         const ceeloFourFiveSixSfx = document.getElementById('ceelo-four-five-six-sfx');
+        const lastUpdatedTimestamp = document.getElementById('last-updated-timestamp');
         const ceeloMusicTargetVolume = 0.008;
 
-        let bgMusicPausedForCeelo = false;
         let ceeloMusicFadeIntervalId = null;
-        function playBgMusic() {
-            if (!bgMusic) return;
-            bgMusic.play().catch(() => {});
+
+        // Format date for display
+        function formatLastUpdatedDate(isoDateString) {
+            const parsedDate = new Date(isoDateString);
+            if (Number.isNaN(parsedDate.getTime())) {
+                return null;
+            }
+
+            return parsedDate.toLocaleString('en-GB', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
         }
 
-        function startSiteMusicFlow() {
-            if (!bgMusic) return;
-            if (!ceeloPopup.classList.contains('show')) {
-                playBgMusic();
+        // Get GitHub repo info from current URL
+        function getGitHubRepoFromLocation() {
+            const hostName = (window.location.hostname || '').toLowerCase();
+            if (!hostName.endsWith('.github.io')) {
+                return null;
+            }
+
+            const owner = hostName.replace(/\.github\.io$/, '');
+            const pathParts = window.location.pathname.split('/').filter(Boolean);
+            const repo = pathParts.length > 0 ? pathParts[0] : owner + '.github.io';
+
+            if (!owner || !repo) {
+                return null;
+            }
+
+            return { owner, repo };
+        }
+
+        // Fetch latest commit date from GitHub
+        async function fetchLatestSiteCommitDate(owner, repo) {
+            try {
+                const response = await fetch('https://api.github.com/repos/' + owner + '/' + repo + '/commits?per_page=1', {
+                    headers: {
+                        'Accept': 'application/vnd.github+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    return null;
+                }
+
+                const commits = await response.json();
+                if (!Array.isArray(commits) || !commits.length) {
+                    return null;
+                }
+
+                const newestCommit = commits[0];
+                return (
+                    newestCommit?.commit?.committer?.date ||
+                    newestCommit?.commit?.author?.date ||
+                    null
+                );
+            } catch (error) {
+                return null;
             }
         }
 
-        if (ceeloBgMusic) {
-            ceeloBgMusic.volume = ceeloMusicTargetVolume;
+        // Update the last updated timestamp
+        async function updateLastUpdatedTimestamp() {
+            if (!lastUpdatedTimestamp) {
+                return;
+            }
+
+            const githubRepo = getGitHubRepoFromLocation();
+            if (!githubRepo) {
+                lastUpdatedTimestamp.textContent = 'Unavailable outside GitHub Pages';
+                return;
+            }
+
+            const { owner, repo } = githubRepo;
+
+            try {
+                const commitDate = await fetchLatestSiteCommitDate(owner, repo);
+                const formattedDate = commitDate ? formatLastUpdatedDate(commitDate) : null;
+                lastUpdatedTimestamp.textContent = formattedDate || 'Unknown';
+            } catch (error) {
+                lastUpdatedTimestamp.textContent = 'Unavailable';
+            }
         }
 
-        if (bgMusic) {
-            bgMusic.volume = 0.005;
+        updateLastUpdatedTimestamp();
+
+        if (ceeloBgMusic) {
+            ceeloBgMusic.volume = ceeloMusicTargetVolume;
         }
 
         if (diceShakeSfx) {
@@ -227,7 +272,7 @@
         }
 
         if (ceeloFourFiveSixSfx) {
-            ceeloFourFiveSixSfx.volume = 0;
+            ceeloFourFiveSixSfx.volume = 0.03;
         }
 
         const ceeloDiceFaceByNumber = {
@@ -417,13 +462,6 @@
         }
 
         function ceeloOpenPopup() {
-            if (bgMusic && !bgMusic.paused) {
-                bgMusic.pause();
-                bgMusicPausedForCeelo = true;
-            } else {
-                bgMusicPausedForCeelo = false;
-            }
-
             ceeloPopup.classList.add('show');
             ceeloPopup.setAttribute('aria-hidden', 'false');
             ceeloPlayMusicWithFadeIn();
@@ -445,11 +483,6 @@
                 ceeloBgMusic.currentTime = 0;
                 ceeloBgMusic.volume = ceeloMusicTargetVolume;
             }
-
-            if (bgMusicPausedForCeelo && bgMusic) {
-                playBgMusic();
-            }
-            bgMusicPausedForCeelo = false;
         }
 
         async function ceeloAnimateSingleRoll(diceRowEl, sideLabel) {
@@ -616,12 +649,6 @@
         if (ceeloOpenBtn && ceeloPopup && ceeloCloseBtn) {
             ceeloOpenBtn.addEventListener('click', ceeloOpenPopup);
             ceeloCloseBtn.addEventListener('click', ceeloClosePopup);
-
-            if (bgMusic) {
-                startSiteMusicFlow();
-                document.addEventListener('pointerdown', startSiteMusicFlow, { once: true });
-                document.addEventListener('keydown', startSiteMusicFlow, { once: true });
-            }
 
             window.addEventListener('click', function(e) {
                 if (e.target === ceeloPopup) {
@@ -1029,5 +1056,4 @@
             .catch(error => console.error('Error loading data:', error));
     </script>
 </body>
-
 </html>
