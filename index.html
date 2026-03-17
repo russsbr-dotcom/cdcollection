@@ -191,24 +191,6 @@
             });
         }
 
-        // Get GitHub repo info from current URL
-        function getGitHubRepoFromLocation() {
-            const hostName = (window.location.hostname || '').toLowerCase();
-            if (!hostName.endsWith('.github.io')) {
-                return null;
-            }
-
-            const owner = hostName.replace(/\.github\.io$/, '');
-            const pathParts = window.location.pathname.split('/').filter(Boolean);
-            const repo = pathParts.length > 0 ? pathParts[0] : owner + '.github.io';
-
-            if (!owner || !repo) {
-                return null;
-            }
-
-            return { owner, repo };
-        }
-
         // Fetch latest commit date from GitHub
         async function fetchLatestSiteCommitDate(owner, repo) {
             try {
@@ -244,13 +226,8 @@
                 return;
             }
 
-            const githubRepo = getGitHubRepoFromLocation();
-            if (!githubRepo) {
-                lastUpdatedTimestamp.textContent = 'Unavailable outside GitHub Pages';
-                return;
-            }
-
-            const { owner, repo } = githubRepo;
+            const owner = 'russsbr-dotcom';
+            const repo = 'cdcollection';
 
             try {
                 const commitDate = await fetchLatestSiteCommitDate(owner, repo);
