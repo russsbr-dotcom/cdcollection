@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>CD Collection</title>
-        <link rel="stylesheet" href="index.css?cb=56" />
+        <link rel="stylesheet" href="index.css?cb=55" />
 </head>
 <body>
     <div class="top-actions" aria-label="External links">
         <!--<p><a href="https://www.discogs.com/user/bustasomerhymes/collection" style="color: #FFD400;">link</a></p>-->
+
+        <button id="ceelo-open-btn" class="top-action-btn" type="button" aria-label="I'm feeling lucky">
+            <img src="six.jpg" alt="Six">
+        </button>
     </div>
     
     <div class="container">
@@ -48,13 +52,9 @@
     </div>
 
     <div class="table-footnotes">
-        <div class="footnotes-header" style="position: relative;">
+        <div class="footnotes-header">
             <p class="table-footnote-line">*1 - Includes shipping and VAT costs.</p>
             <p class="table-last-updated">Last updated: <span id="last-updated-timestamp">Loading...</span></p>
-            <p class="table-last-updated" style="margin-top: 4px;"><span id="last-updated-message">Loading...</span></p>
-            <button id="ceelo-open-btn" class="top-action-btn" type="button" aria-label="I'm feeling lucky" style="position: absolute; margin: 0; right: 0; top: 25px;">
-                <img src="six.jpg" alt="Six">
-            </button>
         </div>
         <div class="footnotes-content">
             <p class="table-footnote-line">*2 - Rating Scale:</p>
@@ -169,7 +169,6 @@
         const diceShakeSfx = document.getElementById('dice-shake-sfx');
         const ceeloFourFiveSixSfx = document.getElementById('ceelo-four-five-six-sfx');
         const lastUpdatedTimestamp = document.getElementById('last-updated-timestamp');
-        const lastUpdatedMessage = document.getElementById('last-updated-message');
         const ceeloMusicTargetVolume = 0.008;
 
         let ceeloMusicFadeIntervalId = null;
@@ -192,10 +191,10 @@
             });
         }
 
-        // Fetch latest commit that modified specific files
-        async function fetchLatestCommitForFiles(owner, repo, filePaths) {
+        // Fetch latest commit date from GitHub
+        async function fetchLatestSiteCommitDate(owner, repo) {
             try {
-                const response = await fetch('https://api.github.com/repos/' + owner + '/' + repo + '/commits?per_page=30', {
+                const response = await fetch('https://api.github.com/repos/' + owner + '/' + repo + '/commits?per_page=1', {
                     headers: {
                         'Accept': 'application/vnd.github+json'
                     }
@@ -206,30 +205,22 @@
                 }
 
                 const commits = await response.json();
-                if (!Array.isArray(commits)) {
+                if (!Array.isArray(commits) || !commits.length) {
                     return null;
                 }
 
-                // Find the first commit that modified any of the specified files
-                for (const commit of commits) {
-                    const files = commit?.files || [];
-                    const modifiedOne = files.some(file => filePaths.includes(file.filename));
-                    
-                    if (modifiedOne) {
-                        return {
-                            date: commit?.commit?.committer?.date || commit?.commit?.author?.date || null,
-                            message: commit?.commit?.message || null
-                        };
-                    }
-                }
-
-                return null;
+                const newestCommit = commits[0];
+                return (
+                    newestCommit?.commit?.committer?.date ||
+                    newestCommit?.commit?.author?.date ||
+                    null
+                );
             } catch (error) {
                 return null;
             }
         }
 
-        // Update the last updated timestamp and message
+        // Update the last updated timestamp
         async function updateLastUpdatedTimestamp() {
             if (!lastUpdatedTimestamp) {
                 return;
@@ -237,31 +228,13 @@
 
             const owner = 'russsbr-dotcom';
             const repo = 'cdcollection';
-            const filesToTrack = ['index.html', 'cdexcel.json'];
 
             try {
-                const commitInfo = await fetchLatestCommitForFiles(owner, repo, filesToTrack);
-                
-                if (commitInfo && commitInfo.date) {
-                    const formattedDate = formatLastUpdatedDate(commitInfo.date);
-                    lastUpdatedTimestamp.textContent = formattedDate || 'Unknown';
-                    
-                    if (commitInfo.message && lastUpdatedMessage) {
-                        // Get the first line of the commit message
-                        const firstLine = commitInfo.message.split('\n')[0];
-                        lastUpdatedMessage.textContent = firstLine;
-                    }
-                } else {
-                    lastUpdatedTimestamp.textContent = 'Unknown';
-                    if (lastUpdatedMessage) {
-                        lastUpdatedMessage.textContent = '';
-                    }
-                }
+                const commitDate = await fetchLatestSiteCommitDate(owner, repo);
+                const formattedDate = commitDate ? formatLastUpdatedDate(commitDate) : null;
+                lastUpdatedTimestamp.textContent = formattedDate || 'Unknown';
             } catch (error) {
                 lastUpdatedTimestamp.textContent = 'Unavailable';
-                if (lastUpdatedMessage) {
-                    lastUpdatedMessage.textContent = '';
-                }
             }
         }
 
