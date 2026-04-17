@@ -575,6 +575,20 @@
       "rating": 5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/73/PublicEnemyItTakesaNationofMillionstoHoldUsBack.jpg",
+      "albumTitle": "It Takes A Nation Of Millions To Hold Us Back, 1988",
+      "artistName": "Public Enemy",
+      "label": "Def Jam Recordings",
+      "catalogNumber": "314 527 358-2",
+      "matrix": "DIDX-146694 1 A02",
+      "sids": "IFPI L329 IFPI 50A0",
+      "year": "Reissue (2014)",
+      "region": "U.S.",
+      "dateAcquisition": "16/04/2026",
+      "price": 8.75,
+      "rating": 5
+    },
+    {
       "imageUrl": "https://m.media-amazon.com/images/I/81VQ2Qr3MgL.jpg",
       "albumTitle": "The Best Of Sade, 1994",
       "artistName": "Sade",
@@ -601,6 +615,20 @@
       "dateAcquisition": "19/01/2026",
       "price": 34.56,
       "rating": 4.5
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c9/SlickRickTheGreatAdventuresofSlickRick.jpg",
+      "albumTitle": "The Great Adventures Of Slick Rick, 1988",
+      "artistName": "Slick Rick",
+      "label": "Def Jam Records/Columbia",
+      "catalogNumber": "CK 40513",
+      "matrix": "1A CK40513 08 B P 56",
+      "sids": "-",
+      "year": "Repress (ca. 1990)",
+      "region": "U.S.",
+      "dateAcquisition": "17/04/2026",
+      "price": 8.37,
+      "rating": 0
     },
     {
       "imageUrl": "https://i.discogs.com/W5rIcd3NYn3zrQpVJnCWU59icbXXX6t4GUwekd3uEBM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzNzA1/ODItMTc2ODczNTA4/NC02MDM3LnBuZw.jpeg",
