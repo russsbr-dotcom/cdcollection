@@ -85,6 +85,20 @@
       "rating": 5.5
     },
     {
+      "imageUrl": "https://m.media-amazon.com/images/I/81oFglS7xOL._UF894,1000_QL80_.jpg",
+      "albumTitle": "Buckshot LeFonque, 1994",
+      "artistName": "Buckshot LeFonque",
+      "label": "Columbia",
+      "catalogNumber": "476532 2",
+      "matrix": "01-476532-10 13 A2 Sony Music",
+      "sids": "-",
+      "year": "1994",
+      "region": "Austria",
+      "dateAcquisition": "16/04/2026",
+      "price": 8.84,
+      "rating": 4
+    },
+    {
       "imageUrl": "https://i.discogs.com/LjYYnXueD-oLrQLT6g1QVlPoWTn3b53vyaqnOo59KPU/rs:fit/g:sm/q:90/h:600/w:589/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0MTQ0/MTIzLTE3NDg3NzA2/OTYtOTMzNy5qcGVn.jpeg",
       "albumTitle": "Meanwhile... (Remaster 2025), 1997",
       "artistName": "Casual",
@@ -167,6 +181,20 @@
       "dateAcquisition": "21/01/2026",
       "price": 13,
       "rating": 5
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/92/Grave6feetdeep.jpg",
+      "albumTitle": "6 Feet Deep, 1994",
+      "artistName": "Gravediggaz",
+      "label": "Gee Street",
+      "catalogNumber": "314-524 016-2",
+      "matrix": "314 524 016-2 01@ E",
+      "sids": "-",
+      "year": "1994",
+      "region": "U.S.",
+      "dateAcquisition": "16/04/2026",
+      "price": 21.45,
+      "rating": 
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71hCtmhkQdL._UF894,1000_QL80_.jpg",
