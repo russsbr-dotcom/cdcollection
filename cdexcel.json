@@ -295,6 +295,34 @@
       "rating": 4.5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/pt/1/1e/Chocolate_Starfish_and_the_Hot_Dog_Flavored_Water.jpg",
+      "albumTitle": "Chocolate Starfish And The Hot Dog Flavored Water, 2000",
+      "artistName": "Limp Bizkit",
+      "label": "Flip/Interscope Records",
+      "catalogNumber": "490 759-2",
+      "matrix": "06069 490 759-2 02 + 51074776 AC Made in Germany by Universal M & L",
+      "sids": "IFPI L002",
+      "year": "2000",
+      "region": "Germany",
+      "dateAcquisition": "17/04/2026",
+      "price": 9.04,
+      "rating": 0
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b8/Limp_Bizkit_Significant_Other.jpg",
+      "albumTitle": "Significant Other, 1999",
+      "artistName": "Limp Bizkit",
+      "label": "Flip/Interscope Records",
+      "catalogNumber": "490 335-2, IND-90335",
+      "matrix": "IND90335 06069 490 335-2 02 + 51008222 Made in Germany by Universal M & L O",
+      "sids": "IFPI 0117",
+      "year": "1999",
+      "region": "Europe",
+      "dateAcquisition": "17/04/2026",
+      "price": 7.88,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://i.discogs.com/oUzPWPb3B2MgsrcDen811IdTLNqf4m9ZMTOOtG9nJ0E/rs:fit/g:sm/q:90/h:540/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNDUx/NjkwLTE3MjMzODAx/ODMtMTg2OS5wbmc.jpeg",
       "albumTitle": "The Awakening (25th Anniversary), 1996 (2x CD)",
       "artistName": "Lord Finesse",
