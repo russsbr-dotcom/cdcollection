@@ -40,7 +40,7 @@
       "region": "U.S.",
       "dateAcquisition": "12/03/2026",
       "price": 23,
-      "rating": 5
+      "rating": 4.5
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51HIgcSLbLL._UF894,1000_QL80_.jpg",
@@ -54,7 +54,7 @@
       "region": "Japan",
       "dateAcquisition": "28/03/2026",
       "price": 33.79,
-      "rating": 6.5
+      "rating": 6
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/64/Black_Sabbath_-_Paranoid.jpg",
@@ -152,7 +152,7 @@
       "region": "U.S.",
       "dateAcquisition": "20/01/2026",
       "price": 30.39,
-      "rating": 6
+      "rating": 5.5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/eb/Gangstarrmomentoftruth.jpg",
@@ -194,7 +194,7 @@
       "region": "U.S.",
       "dateAcquisition": "16/04/2026",
       "price": 21.45,
-      "rating": 0
+      "rating": 5.5
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71hCtmhkQdL._UF894,1000_QL80_.jpg",
@@ -306,7 +306,7 @@
       "region": "Germany",
       "dateAcquisition": "17/04/2026",
       "price": 9.04,
-      "rating": 0
+      "rating": 4
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b8/Limp_Bizkit_Significant_Other.jpg",
@@ -320,7 +320,7 @@
       "region": "Europe",
       "dateAcquisition": "17/04/2026",
       "price": 7.88,
-      "rating": 0
+      "rating": 5.5
     },
     {
       "imageUrl": "https://i.discogs.com/oUzPWPb3B2MgsrcDen811IdTLNqf4m9ZMTOOtG9nJ0E/rs:fit/g:sm/q:90/h:540/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNDUx/NjkwLTE3MjMzODAx/ODMtMTg2OS5wbmc.jpeg",
@@ -404,7 +404,7 @@
       "region": "Germany",
       "dateAcquisition": "13/02/2026",
       "price": 16,
-      "rating": 6
+      "rating": 5.5
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71fk4+CG0pL._UF1000,1000_QL80_.jpg",
@@ -558,7 +558,7 @@
       "region": "Germany",
       "dateAcquisition": "20/04/2026",
       "price": 25.75,
-      "rating": 0
+      "rating": 5.5
     },
     {
       "imageUrl": "https://static.wikia.nocookie.net/hip-hop-music/images/2/27/Bacdafucup.jpeg/revision/latest?cb=20140220074038",
@@ -572,7 +572,7 @@
       "region": "U.S.",
       "dateAcquisition": "20/04/2026",
       "price": 14.74,
-      "rating": 0
+      "rating": 5
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/81XDjphdE9L._UF894,1000_QL80_.jpg",
@@ -586,7 +586,7 @@
       "region": "U.S.",
       "dateAcquisition": "28/03/2026",
       "price": 48.52,
-      "rating": 6.5
+      "rating": 6
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/Portishead_-_Dummy.png",
@@ -656,7 +656,7 @@
       "region": "U.S.",
       "dateAcquisition": "17/04/2026",
       "price": 8.37,
-      "rating": 0
+      "rating": 4.5
     },
     {
       "imageUrl": "https://i.discogs.com/W5rIcd3NYn3zrQpVJnCWU59icbXXX6t4GUwekd3uEBM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzNzA1/ODItMTc2ODczNTA4/NC02MDM3LnBuZw.jpeg",
