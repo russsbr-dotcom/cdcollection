@@ -24,14 +24,14 @@
                 <span id="release-header">
                     <span class="release-header-controls">
                         Release
-                        <button id="sort-artist-btn" class="sort-button">▼</button>
+                        <button id="sort-artist-btn" class="sort-button descending">▼</button>
                         <input id="album-search-input" class="album-search-input" type="text" placeholder="Search albums or artists..." aria-label="Search albums or artists">
                     </span>
                 </span>
                 <span>Catalog</span>
                 <span id="identification-header">Identification <button id="sort-year-btn" class="sort-button">▼</button></span>
-                <span id="acquisition-header">Acquisition Details <button id="sort-date-btn" class="sort-button">▼</button><button id="sort-price-btn" class="sort-button" aria-label="Sort by price"></button><span class="header-footnote">*1</span></span>
-                <span id="rating-header">Personal Rating<span class="header-footnote">*2</span> <button id="sort-rating-btn" class="sort-button">▼</button></span>
+                <span id="acquisition-header">Date of acquisition <button id="sort-date-btn" class="sort-button">▼</button></span>
+                <span id="rating-header">Personal Rating<span class="header-footnote">*</span> <button id="sort-rating-btn" class="sort-button">▼</button></span>
             </h2>
         </div>
 
@@ -53,11 +53,10 @@
 
     <div class="table-footnotes">
         <div class="footnotes-header">
-            <p class="table-footnote-line">*1 - Includes shipping and VAT costs.</p>
+            <p class="table-footnote-line">*Rating Scale:</p>
             <p class="table-last-updated">Last updated: <span id="last-updated-timestamp">Loading...</span></p>
         </div>
         <div class="footnotes-content">
-            <p class="table-footnote-line">*2 - Rating Scale:</p>
             <div class="rating-legend-scale" aria-label="Rating scale from 1 to 7">
                 <div class="rating-legend-item">
                     <div class="rating-legend-star">1</div>
@@ -646,10 +645,9 @@
         }
 
         // Sort state
-        let sortAscendingArtist = true;
+        let sortAscendingArtist = false;
         let sortAscendingYear = false;
         let sortAscendingDate = true;
-        let sortAscendingPrice = true;
         let sortAscendingRating = true;
         let cachedData = null;
 
@@ -685,26 +683,6 @@
             }
             
             return html;
-        }
-
-        // Format price to always include € when applicable, using comma as decimal separator
-        function formatPrice(price) {
-            if (price === null || price === undefined) return '-';
-            if (price === '-' || price === '') return '';
-            // If it's already a string containing € return trimmed value
-            if (typeof price === 'string') {
-                const trimmed = price.trim();
-                if (trimmed.endsWith('€')) return trimmed;
-                const num = Number(trimmed);
-                if (!isNaN(num)) {
-                    return num.toLocaleString('de-DE', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '€';
-                }
-                return trimmed + '€';
-            }
-            if (typeof price === 'number') {
-                return price.toLocaleString('de-DE', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '€';
-            }
-            return String(price) + '€';
         }
 
         // Render a labeled field only if value exists and is not '-'
@@ -769,7 +747,6 @@
                     </td>
                     <td class="col-acquisition">
                         ${renderField('', cd.dateAcquisition, 'date', false)}
-                        ${ cd.price && String(cd.price).trim() !== '-' ? `<div class="field price">${formatPrice(cd.price)}</div>` : '' }
                     </td>
                     <td class="col-rating">
                         <div class="field rating">${generateStars(cd.rating)}</div>
@@ -907,49 +884,6 @@
             applyAlbumSearch();
         }
 
-        // Sort by price
-        function sortByPrice() {
-            if (!cachedData) return;
-
-            // Toggle sort direction FIRST
-            sortAscendingPrice = !sortAscendingPrice;
-
-            cachedData.cds.sort((a, b) => {
-                // Extract price number from strings like "15,50€" or "15.50€"
-                const priceStrA = (a.price || '').toString().trim();
-                const priceStrB = (b.price || '').toString().trim();
-                const hasA = priceStrA && priceStrA !== '' && priceStrA !== '-';
-                const hasB = priceStrB && priceStrB !== '' && priceStrB !== '-';
-                
-                // Put items without price at the bottom
-                if (!hasA && !hasB) return 0;
-                if (!hasA) return 1;
-                if (!hasB) return -1;
-                
-                const priceA = parseFloat(priceStrA.replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
-                const priceB = parseFloat(priceStrB.replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
-                
-                if (sortAscendingPrice) {
-                    return priceA - priceB;
-                } else {
-                    return priceB - priceA;
-                }
-            });
-
-            // Update button appearance
-            const sortBtn = document.getElementById('sort-price-btn');
-            if (sortAscendingPrice) {
-                sortBtn.classList.remove('descending');
-                sortBtn.classList.add('ascending');
-            } else {
-                sortBtn.classList.add('descending');
-                sortBtn.classList.remove('ascending');
-            }
-
-            // Re-render table (respect active search filter)
-            applyAlbumSearch();
-        }
-
         // Sort by rating
         function sortByRating() {
             if (!cachedData) return;
@@ -993,12 +927,12 @@
             .then(data => {
                 cachedData = data;
                 applyAlbumSearch();
+                sortByRating();
 
                 // Add click handlers to sort buttons
                 document.getElementById('sort-artist-btn').addEventListener('click', sortByArtist);
                 document.getElementById('sort-year-btn').addEventListener('click', sortByYear);
                 document.getElementById('sort-date-btn').addEventListener('click', sortByDate);
-                document.getElementById('sort-price-btn').addEventListener('click', sortByPrice);
                 document.getElementById('sort-rating-btn').addEventListener('click', sortByRating);
 
                 const searchInput = document.getElementById('album-search-input');
