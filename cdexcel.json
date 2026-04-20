@@ -547,6 +547,34 @@
       "rating": 5.5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/02/Allwegotizus.jpg",
+      "albumTitle": "All We Got Iz Us, 1995",
+      "artistName": "Onyx",
+      "label": "JMJ, Rush Associated Labels, Def Jam Music Group Inc.",
+      "catalogNumber": "529 265-2",
+      "matrix": "529 265-2 01 + MADE IN GERMANY BY PMDC F",
+      "sids": "IFPI L003 IFPI 0180",
+      "year": "1995",
+      "region": "Germany",
+      "dateAcquisition": "20/04/2026",
+      "price": 25.75,
+      "rating": 0
+    },
+    {
+      "imageUrl": "https://static.wikia.nocookie.net/hip-hop-music/images/2/27/Bacdafucup.jpeg/revision/latest?cb=20140220074038",
+      "albumTitle": "Bacdafucup, 1993",
+      "artistName": "Onyx",
+      "label": "JMJ, Rush Associated Labels, Chaos/Columbia",
+      "catalogNumber": "OK 53302",
+      "matrix": "1A OK53302 01 C3 P53",
+      "sids": "",
+      "year": "1993",
+      "region": "U.S.",
+      "dateAcquisition": "20/04/2026",
+      "price": 14.74,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://m.media-amazon.com/images/I/81XDjphdE9L._UF894,1000_QL80_.jpg",
       "albumTitle": "Bizarre Ride II The Pharcyde, 1992",
       "artistName": "The Pharcyde",
