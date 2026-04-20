@@ -311,6 +311,7 @@ body {
     display: block;
     object-fit: cover;
     border: 1px solid #FFD400;
+    image-rendering: crisp-edges;
 }
 
 /* Field Styling */
@@ -470,16 +471,6 @@ body {
 .album-search-input:focus::placeholder {
     color: #000000;
     opacity: 0.8;
-}
-
-#sort-price-btn {
-    width: 12px;
-    height: 12px;
-    background-image: url('mula.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 0;
 }
 
 /* Scrollbar Styling removed (using page scroll) */
