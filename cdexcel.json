@@ -127,6 +127,20 @@
       "rating": 3.5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/56/DrDre-2001.jpg",
+      "albumTitle": "2001, 1999",
+      "artistName": "Dr. Dre",
+      "label": "Aftermath Ent., Interscope Records",
+      "catalogNumber": "490 486-2",
+      "matrix": "4904862 52 A00",
+      "sids": "IFPI L556 IFPI 94K8",
+      "year": "Reissue",
+      "region": "Europe",
+      "dateAcquisition": "27/06/2026",
+      "price": 10.6,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Encore_%28Eminem_album%29_coverart.jpg/250px-Encore_%28Eminem_album%29_coverart.jpg",
       "albumTitle": "Encore, 2004",
       "artistName": "Eminem",
@@ -659,6 +673,20 @@
       "rating": 4.5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/63/SnoopDoggyDoggDoggystyle.jpg",
+      "albumTitle": "Doggystyle, 1993",
+      "artistName": "Snoop Doggy Dogg",
+      "label": "Death Row Records, Gamma",
+      "catalogNumber": "DRR112330CD",
+      "matrix": "DRR112330CD 6745-CD-6226 24-064-13-2",
+      "sids": "IFPI LV89 IFPI L814",
+      "year": "2024 (30th Anniversary Edition)",
+      "region": "Worldwide",
+      "dateAcquisition": "27/06/2026",
+      "price": 25.6€,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://i.discogs.com/W5rIcd3NYn3zrQpVJnCWU59icbXXX6t4GUwekd3uEBM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzNzA1/ODItMTc2ODczNTA4/NC02MDM3LnBuZw.jpeg",
       "albumTitle": "Tags Of The Times, 1998",
       "artistName": "Various",
@@ -699,6 +727,20 @@
       "dateAcquisition": "22/02/2026",
       "price": 17,
       "rating": 4.5
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e9/Westside_Connection_-_Bow_Down_%28Front%29.jpg",
+      "albumTitle": "Bow Down, 1996",
+      "artistName": "Westside Connection",
+      "label": "Priority Records, Lench Mob Records",
+      "catalogNumber": "P2 50583",
+      "matrix": "(1004356) 49925058321 03 0001",
+      "sids": "IFPI L247 IFPI KK40",
+      "year": "1996",
+      "region": "U.S.",
+      "dateAcquisition": "27/06/2026",
+      "price": 24.6,
+      "rating": 0
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/614UiJzoxPL._UF894,1000_QL80_.jpg",
