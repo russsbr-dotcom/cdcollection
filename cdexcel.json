@@ -127,6 +127,20 @@
       "rating": 3.5
     },
     {
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcFVHLyptzCu8AG8Z2LXlAVD_PnbUy9ffHyizKL-YYCw&s=10",
+      "albumTitle": "Reachin' (A New Refutation Of Time And Space), 1993",
+      "artistName": "Digable Planets",
+      "label": "Music On CD",
+      "catalogNumber": "MOCCD14636",
+      "matrix": "480005 @1 WWW.PROFACT-INTERNATIONAL.COM",
+      "sids": "IFPI LW03 IFPI AAHP9",
+      "year": "Repress (2026)",
+      "region": "Netherlands",
+      "dateAcquisition": "16/07/2026",
+      "price": 2690yen,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/56/DrDre-2001.jpg",
       "albumTitle": "2001, 1999",
       "artistName": "Dr. Dre",
@@ -138,7 +152,7 @@
       "region": "Europe",
       "dateAcquisition": "27/06/2026",
       "price": 10.6,
-      "rating": 0
+      "rating": 5.5
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Encore_%28Eminem_album%29_coverart.jpg/250px-Encore_%28Eminem_album%29_coverart.jpg",
@@ -379,6 +393,20 @@
       "rating": 7
     },
     {
+      "imageUrl": "https://assets.bigcartel.com/product_images/225955765/43986023_2297226497017554_969703106264456035_n.jpeg",
+      "albumTitle": "Fuck What You Think, 1998",
+      "artistName": "Main Source",
+      "label": "P-Vine Records",
+      "catalogNumber": "PCD-24786",
+      "matrix": "PCD-24786 MT 461",
+      "sids": "IFPI L154 IFPI 445J",
+      "year": "Reissue (2019)",
+      "region": "Japan",
+      "dateAcquisition": "16/07/2026",
+      "price": 2640yen,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/74/100th_Window.jpg",
       "albumTitle": "100th Window, 2003",
       "artistName": "Massive Attack",
@@ -502,7 +530,7 @@
       "region": "Germany",
       "dateAcquisition": "05/09/2025",
       "price": 8,
-      "rating": 5
+      "rating": 6
     },
     {
       "imageUrl": "https://i.discogs.com/MpEyRE3lEAGN1dx4ArmUbCCk92CNgdkY0KFh7HVplgw/rs:fit/g:sm/q:90/h:540/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwMDgy/Nzk3LTE3MTAzMDk5/MTEtNDAxMy5qcGVn.jpeg",
@@ -531,6 +559,20 @@
       "dateAcquisition": "21/01/2026",
       "price": 13,
       "rating": 5
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/98/MetaphoricalMusic.jpg",
+      "albumTitle": "Metaphorical Music, 2011",
+      "artistName": "Nujabes",
+      "label": "Hyde Out Productions",
+      "catalogNumber": "HPD4",
+      "matrix": "HPD4 MT 961",
+      "sids": "IFPI L159 IFPI 443J",
+      "year": "Reissue (2026)",
+      "region": "Japan",
+      "dateAcquisition": "16/07/2026",
+      "price": 3520yen,
+      "rating": 0
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fd/Jewelz_%28O.C._album_-_cover_art%29.jpg",
@@ -631,6 +673,48 @@
       "rating": 5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/TheUnseenalbumcover1.jpg/250px-TheUnseenalbumcover1.jpg",
+      "albumTitle": "The Unseen, 2000",
+      "artistName": "Quasimoto",
+      "label": "Stones Throw Records",
+      "catalogNumber": "STH2025",
+      "matrix": "C36074-EN #22267-QUASIMOTO-THE UNSEEN (STH2025)",
+      "sids": "",
+      "year": "Repress",
+      "region": "",
+      "dateAcquisition": "16/07/2026",
+      "price": 2640yen,
+      "rating": 0
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/17/Raekwon_only.jpg",
+      "albumTitle": "Only Built 4 Cuban Linx..., 1995",
+      "artistName": "Raekwon The Chef",
+      "label": "Loud Records, Wu-Tang Records, RCA, Bertelsmann Music Group",
+      "catalogNumber": "07863 66663 2",
+      "matrix": "arvato 50245086/07863666632",
+      "sids": "-",
+      "year": "Reissue",
+      "region": "Europe",
+      "dateAcquisition": "16/07/2026",
+      "price": 1790yen,
+      "rating": 0
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Whuttheealbum.jpg/250px-Whuttheealbum.jpg",
+      "albumTitle": "Whut¿ Thee Album, 1992",
+      "artistName": "Redman",
+      "label": "RAL",
+      "catalogNumber": "314 523 518-2",
+      "matrix": "(1000880) A9 3145235182-2 03 0001",
+      "sids": "IFPI LV77 IFPI KK3F",
+      "year": "Reissue",
+      "region": "U.S.",
+      "dateAcquisition": "16/07/2026",
+      "price": 1590yen,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://m.media-amazon.com/images/I/81VQ2Qr3MgL.jpg",
       "albumTitle": "The Best Of Sade, 1994",
       "artistName": "Sade",
@@ -673,6 +757,20 @@
       "rating": 4.5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d8/Dahshinin.jpg",
+      "albumTitle": "Dah Shinin', 1995",
+      "artistName": "Smif-N-Wessun",
+      "label": "P-Vine Records",
+      "catalogNumber": "PCD-94003",
+      "matrix": "PCD-23816 MT 262",
+      "sids": "IFPI LT46 IFPI 443K",
+      "year": "Reissue (2020)",
+      "region": "Japan",
+      "dateAcquisition": "16/07/2026",
+      "price": 2640yen,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/63/SnoopDoggyDoggDoggystyle.jpg",
       "albumTitle": "Doggystyle, 1993",
       "artistName": "Snoop Doggy Dogg",
@@ -684,7 +782,7 @@
       "region": "Worldwide",
       "dateAcquisition": "27/06/2026",
       "price": 25.6,
-      "rating": 0
+      "rating": 5
     },
     {
       "imageUrl": "https://i.discogs.com/W5rIcd3NYn3zrQpVJnCWU59icbXXX6t4GUwekd3uEBM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzNzA1/ODItMTc2ODczNTA4/NC02MDM3LnBuZw.jpeg",
@@ -729,6 +827,20 @@
       "rating": 4.5
     },
     {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/5b/Regulate_G_Funk_Era.jpg",
+      "albumTitle": "Regulate... G Funk Era, 1994",
+      "artistName": "Warren G",
+      "label": "Def Jam Recordings",
+      "catalogNumber": "542 427-2",
+      "matrix": "542472 13 A00 Sony DADC",
+      "sids": "IFPI L553 IFPI 94K8",
+      "year": "Remaster (2005)",
+      "region": "Europe",
+      "dateAcquisition": "16/07/2026",
+      "price": 2090yen,
+      "rating": 0
+    },
+    {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e9/Westside_Connection_-_Bow_Down_%28Front%29.jpg",
       "albumTitle": "Bow Down, 1996",
       "artistName": "Westside Connection",
@@ -740,7 +852,7 @@
       "region": "U.S.",
       "dateAcquisition": "27/06/2026",
       "price": 24.6,
-      "rating": 0
+      "rating": 4.5
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/614UiJzoxPL._UF894,1000_QL80_.jpg",
