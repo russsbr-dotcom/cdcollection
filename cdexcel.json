@@ -72,7 +72,7 @@
     },    
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/33/MosDef%26TalibKweliBlackStar.jpg",
-      "albumTitle": "Mos Def & Talib Kweli Are Black Star",
+      "albumTitle": "Mos Def & Talib Kweli Are Black Star, 1998",
       "artistName": "Black Star",
       "label": "Rawkus",
       "catalogNumber": "088 112 897-2",
@@ -223,6 +223,20 @@
       "dateAcquisition": "21/01/2026",
       "price": 13,
       "rating": 5
+    },
+    {
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/58/200grandpuba.jpg",
+      "albumTitle": "2000, 1995",
+      "artistName": "Grand Puba",
+      "label": "Tommy Boy",
+      "catalogNumber": "TB-5022-2",
+      "matrix": "(1187474) TB50222R0 01 0001",
+      "sids": "IFPI LT40 IFPI KKTE",
+      "year": "Reissue (2022)",
+      "region": "U.S.",
+      "dateAcquisition": "26/08/2026",
+      "price": 21.99,
+      "rating": 0
     },
     {
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/92/Grave6feetdeep.jpg",
