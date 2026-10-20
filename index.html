@@ -9,7 +9,7 @@
     <div class="top-actions" aria-label="External links">
         <!--<p><a href="https://www.discogs.com/user/bustasomerhymes/collection" style="color: #FFD400;">link</a></p>-->
 
-        <button id="ceelo-open-btn" class="top-action-btn" type="button" aria-label="I'm feeling lucky">
+        <button id="ceelo-open-btn" class="top-action-btn" type="button" aria-label="Pick a random album">
             <img src="six.jpg" alt="Six">
         </button>
     </div>
@@ -171,6 +171,33 @@
         const ceeloMusicTargetVolume = 0.008;
 
         let ceeloMusicFadeIntervalId = null;
+
+        function pickRandomAlbum() {
+            if (!cachedData || !Array.isArray(cachedData.cds) || !cachedData.cds.length) return;
+
+            const randomCd = cachedData.cds[Math.floor(Math.random() * cachedData.cds.length)];
+            const searchInput = document.getElementById('album-search-input');
+            if (!searchInput) return;
+
+            const query = randomCd.albumTitle || randomCd.artistName || '';
+            searchInput.value = query;
+            searchInput.classList.add('open');
+            applyAlbumSearch();
+            searchInput.focus();
+        }
+
+        function handleAlbumSearchKeydown(event) {
+            const searchInput = document.getElementById('album-search-input');
+            if (!searchInput || event.key !== 'Enter') return;
+
+            const query = (searchInput.value || '').trim().toLowerCase();
+            if (query === 'ceelo') {
+                event.preventDefault();
+                searchInput.value = '';
+                searchInput.classList.remove('open');
+                ceeloOpenPopup();
+            }
+        }
 
         // Format date for display
         function formatLastUpdatedDate(isoDateString) {
@@ -623,7 +650,7 @@
         }
 
         if (ceeloOpenBtn && ceeloPopup && ceeloCloseBtn) {
-            ceeloOpenBtn.addEventListener('click', ceeloOpenPopup);
+            ceeloOpenBtn.addEventListener('click', pickRandomAlbum);
             ceeloCloseBtn.addEventListener('click', ceeloClosePopup);
 
             window.addEventListener('click', function(e) {
@@ -743,7 +770,7 @@
                     <td class="col-identification">
                         ${renderField('Matrix:', cd.matrix, 'matrix')}
                         ${renderField("SID's:", cd.sids, 'sids')}
-                        ${ (cd.year && cd.region && String(cd.year).trim() !== '-' && String(cd.region).trim() !== '-') ? `<div class="field year-region">${cd.year} - ${cd.region}</div>` : (cd.year && String(cd.year).trim() !== '-' ? `<div class="field year-region">${cd.year}</div>` : (cd.region && String(cd.region).trim() !== '-' ? `<div class="field year-region">${cd.region}</div>` : '')) }
+                        ${(cd.year && cd.region && String(cd.year).trim() !== '-' && String(cd.region).trim() !== '-') ? `<div class="field year-region">${cd.year} - ${cd.region}</div>` : (cd.year ? `<div class="field year-region">${cd.year}</div>` : '')}
                     </td>
                     <td class="col-acquisition">
                         ${renderField('', cd.dateAcquisition, 'date', false)}
@@ -947,6 +974,7 @@
                     });
 
                     searchInput.addEventListener('input', applyAlbumSearch);
+                    searchInput.addEventListener('keydown', handleAlbumSearchKeydown);
 
                     searchInput.addEventListener('keydown', function(event) {
                         if (event.key === 'Escape') {
