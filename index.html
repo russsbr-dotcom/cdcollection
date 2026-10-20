@@ -172,6 +172,51 @@
 
         let ceeloMusicFadeIntervalId = null;
 
+        function resetCatalogToDefaultView() {
+            const searchInput = document.getElementById('album-search-input');
+            if (searchInput) {
+                searchInput.value = '';
+                searchInput.classList.remove('open');
+            }
+
+            if (!cachedData || !Array.isArray(cachedData.cds)) return;
+
+            sortAscendingArtist = false;
+            sortAscendingYear = false;
+            sortAscendingDate = true;
+            sortAscendingRating = false;
+
+            const sortArtistBtn = document.getElementById('sort-artist-btn');
+            const sortYearBtn = document.getElementById('sort-year-btn');
+            const sortDateBtn = document.getElementById('sort-date-btn');
+            const sortRatingBtn = document.getElementById('sort-rating-btn');
+
+            if (sortArtistBtn) {
+                sortArtistBtn.classList.add('descending');
+                sortArtistBtn.classList.remove('ascending');
+            }
+            if (sortYearBtn) {
+                sortYearBtn.classList.add('descending');
+                sortYearBtn.classList.remove('ascending');
+            }
+            if (sortDateBtn) {
+                sortDateBtn.classList.remove('descending');
+                sortDateBtn.classList.add('ascending');
+            }
+            if (sortRatingBtn) {
+                sortRatingBtn.classList.add('descending');
+                sortRatingBtn.classList.remove('ascending');
+            }
+
+            cachedData.cds.sort((a, b) => {
+                const ratingA = parseFloat(a.rating) || 0;
+                const ratingB = parseFloat(b.rating) || 0;
+                return ratingB - ratingA;
+            });
+
+            applyAlbumSearch();
+        }
+
         function pickRandomAlbum() {
             if (!cachedData || !Array.isArray(cachedData.cds) || !cachedData.cds.length) return;
 
@@ -486,6 +531,7 @@
                 ceeloBgMusic.currentTime = 0;
                 ceeloBgMusic.volume = ceeloMusicTargetVolume;
             }
+            resetCatalogToDefaultView();
         }
 
         async function ceeloAnimateSingleRoll(diceRowEl, sideLabel) {
