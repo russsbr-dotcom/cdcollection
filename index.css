@@ -239,7 +239,6 @@ body {
     border-bottom: 1px solid #FFD400;
 }
 
-
 .cd-row td {
     vertical-align: middle;
     padding: 8px 12px; /* reduced padding */
@@ -293,6 +292,23 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.acquisition-stack {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 20px;
+}
+
+.release-noskip {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    object-fit: contain;
+    flex-shrink: 0;
+    vertical-align: middle;
+    opacity: 0.95;
 }
 
 /* Release container: thumbnail + text inline */
