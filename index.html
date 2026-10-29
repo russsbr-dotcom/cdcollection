@@ -724,6 +724,35 @@
         let sortAscendingRating = true;
         let cachedData = null;
 
+        async function loadCatalog() {
+            try {
+                const response = await fetch('cdexcel.json', { cache: 'no-store' });
+                if (!response.ok) {
+                    throw new Error('Failed to load cdexcel.json');
+                }
+
+                const data = await response.json();
+                if (!data || !Array.isArray(data.cds)) {
+                    throw new Error('cdexcel.json does not contain a cds array');
+                }
+
+                cachedData = data;
+                cachedData.cds.sort((a, b) => {
+                    const ratingA = parseFloat(a.rating) || 0;
+                    const ratingB = parseFloat(b.rating) || 0;
+                    return ratingB - ratingA;
+                });
+
+                applyAlbumSearch();
+            } catch (error) {
+                console.error('Unable to load CD catalog:', error);
+                const tableBody = document.getElementById('cdTableBody');
+                if (tableBody) {
+                    tableBody.innerHTML = '<tr><td colspan="5">Unable to load catalog.</td></tr>';
+                }
+            }
+        }
+
         // Function to generate stars from rating (1-7) using PNG images
         function generateStars(rating) {
             if (!rating) return '';
@@ -793,6 +822,7 @@
         // Function to render table rows
         function renderTable(cds) {
             const tableBody = document.getElementById('cdTableBody');
+            if (!tableBody) return;
             tableBody.innerHTML = ''; // Clear existing rows
             
             cds.forEach(cd => {
@@ -1000,24 +1030,13 @@
         document.getElementById('sort-date-btn').addEventListener('click', sortByDate);
         document.getElementById('sort-rating-btn').addEventListener('click', sortByRating);
 
-        document.getElementById('album-search-input').addEventListener('input', applyAlbumSearch);
-        document.getElementById('album-search-input').addEventListener('keydown', handleAlbumSearchKeydown);
+        const searchInput = document.getElementById('album-search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', applyAlbumSearch);
+            searchInput.addEventListener('keydown', handleAlbumSearchKeydown);
+        }
 
-        // Initial render
-        fetch('cds.json')
-            .then(response => response.json())
-            .then(data => {
-                cachedData = data;
-                cachedData.cds.sort((a, b) => {
-                    const ratingA = parseFloat(a.rating) || 0;
-                    const ratingB = parseFloat(b.rating) || 0;
-                    return ratingB - ratingA;
-                });
-                applyAlbumSearch();
-            })
-            .catch(error => {
-                console.error('Error loading CD data:', error);
-            });
+        loadCatalog();
     </script>
 </body>
 </html>
