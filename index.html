@@ -724,32 +724,6 @@
         let sortAscendingRating = true;
         let cachedData = null;
 
-        const noskipAlbumTitles = new Set([
-            'enta da stage 1993',
-            'mezzanine 1998',
-            'moment of truth 1998',
-            'genios 1999',
-            'shades of blue madlib invades blue note 2003',
-            'madvillainy 2004',
-            'enter the wu tang 36 chambers 1993',
-            'jazzmatazz vol 1 1993',
-            'mm food 2004 dvd',
-            'illmatic 1994',
-            'word life 1994',
-            'bizarre ride ii the pharcyde 1992',
-            'liquid swords 1995',
-            'the awakening 25th anniversary 1996 2x cd',
-            'bacdafucup 1993'
-        ]);
-
-        function normalizeAlbumTitle(title) {
-            return String(title || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-        }
-
-        function shouldShowNoskip(cd) {
-            return noskipAlbumTitles.has(normalizeAlbumTitle(cd.albumTitle));
-        }
-
         // Function to generate stars from rating (1-7) using PNG images
         function generateStars(rating) {
             if (!rating) return '';
@@ -845,10 +819,7 @@
                         ${(cd.year && cd.region && String(cd.year).trim() !== '-' && String(cd.region).trim() !== '-') ? `<div class="field year-region">${cd.year} - ${cd.region}</div>` : (cd.year ? `<div class="field year-region">${cd.year}</div>` : '')}
                     </td>
                     <td class="col-acquisition">
-                        <div class="acquisition-stack">
-                            ${renderField('', cd.dateAcquisition, 'date', false)}
-                            ${shouldShowNoskip(cd) ? '<img class="release-noskip" src="noskips.png" alt="No skips" title="No skips">' : ''}
-                        </div>
+                        ${renderField('', cd.dateAcquisition, 'date', false)}
                     </td>
                     <td class="col-rating">
                         <div class="field rating">${generateStars(cd.rating)}</div>
@@ -1023,33 +994,29 @@
             applyAlbumSearch();
         }
 
-        // Fetch and parse the JSON data (cache-busted)
-        fetch('cdexcel.json?cb=' + Date.now())
+        // Add event listeners for sort buttons
+        document.getElementById('sort-artist-btn').addEventListener('click', sortByArtist);
+        document.getElementById('sort-year-btn').addEventListener('click', sortByYear);
+        document.getElementById('sort-date-btn').addEventListener('click', sortByDate);
+        document.getElementById('sort-rating-btn').addEventListener('click', sortByRating);
+
+        document.getElementById('album-search-input').addEventListener('input', applyAlbumSearch);
+        document.getElementById('album-search-input').addEventListener('keydown', handleAlbumSearchKeydown);
+
+        // Initial render
+        fetch('cds.json')
             .then(response => response.json())
             .then(data => {
                 cachedData = data;
-                const initialSort = (a, b) => (parseFloat(b.rating) || 0) - (parseFloat(a.rating) || 0);
-                cachedData.cds.sort(initialSort);
+                cachedData.cds.sort((a, b) => {
+                    const ratingA = parseFloat(a.rating) || 0;
+                    const ratingB = parseFloat(b.rating) || 0;
+                    return ratingB - ratingA;
+                });
                 applyAlbumSearch();
-
-                const sortArtistBtn = document.getElementById('sort-artist-btn');
-                const sortYearBtn = document.getElementById('sort-year-btn');
-                const sortDateBtn = document.getElementById('sort-date-btn');
-                const sortRatingBtn = document.getElementById('sort-rating-btn');
-
-                if (sortArtistBtn) sortArtistBtn.addEventListener('click', sortByArtist);
-                if (sortYearBtn) sortYearBtn.addEventListener('click', sortByYear);
-                if (sortDateBtn) sortDateBtn.addEventListener('click', sortByDate);
-                if (sortRatingBtn) sortRatingBtn.addEventListener('click', sortByRating);
-
-                const albumSearchInput = document.getElementById('album-search-input');
-                if (albumSearchInput) {
-                    albumSearchInput.addEventListener('input', applyAlbumSearch);
-                    albumSearchInput.addEventListener('keydown', handleAlbumSearchKeydown);
-                }
             })
             .catch(error => {
-                console.error('Failed to load catalog data:', error);
+                console.error('Error loading CD data:', error);
             });
     </script>
 </body>
